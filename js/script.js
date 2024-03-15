@@ -30,5 +30,10 @@ function squareGenerator(num) {
     let newSquare = document.createElement('div');
     newSquare.classList.add('square');
     newSquare.innerHTML = `<span>${num}</span>`;
+    // La cella cliccata dall'utente si colora di blu
+    newSquare.addEventListener('click', function() {
+        this.classList.add('dark-blue');
+        console.log(num);
+    });
     return newSquare;
 }
