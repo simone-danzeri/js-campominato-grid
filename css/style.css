@@ -54,9 +54,24 @@ main {
 #grid{
     height: 800px;
     width: 800px;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0px auto;
+}
+
+.grid-border{
     border: 2px solid black;
-    background-color: bisque;
+}
+
+.square {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    background-color: aquamarine;
+    border: 2px solid black;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ------------

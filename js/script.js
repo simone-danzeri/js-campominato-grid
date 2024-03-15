@@ -10,9 +10,25 @@ const grid = document.querySelector('#grid');
 console.log(grid);
 // Metto in ascolto il bottone del play
 playBtn.addEventListener('click', function() {
-    
+    // Per 100 volte dovrò generare un elemento della griglia
+    for (let i = 1; i <= 100; i++) {
+        // Mi richiamo la funzione per generare un elemento della griglia
+        let square = squareGenerator(i);
+        grid.append(square);
+    }
+    grid.classList.add('grid-border');
 });
 
 
 
 // FUNCTIONS
+
+// Mi genera un quadrato con dentro un numero
+// num -> un numero intero che si troverà dentro il quadrato
+// return: un elemento del DOM quadrato
+function squareGenerator(num) {
+    let newSquare = document.createElement('div');
+    newSquare.classList.add('square');
+    newSquare.innerHTML = `<span>${num}</span>`;
+    return newSquare;
+}
