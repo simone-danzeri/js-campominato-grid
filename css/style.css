@@ -13,7 +13,7 @@
 ------------*/
 
 .header-container {
-  height: 200px;
+  height: 150px;
   padding: 0px 20px;
   display: flex;
   align-items: center;
@@ -41,6 +41,7 @@
 #play-btn {
   padding: 10px 22px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 /* ------------
@@ -73,6 +74,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .dark-blue{

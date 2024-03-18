@@ -10,10 +10,17 @@ const grid = document.querySelector('#grid');
 console.log(grid);
 // Metto in ascolto il bottone del play
 playBtn.addEventListener('click', function() {
+    // Svuoto la griglia prima del ciclo così da non avere una nuova griglia ogni volta che premo play
+    grid.innerHTML = '';
     // Per 100 volte dovrò generare un elemento della griglia
     for (let i = 1; i <= 100; i++) {
         // Mi richiamo la funzione per generare un elemento della griglia
         let square = squareGenerator(i);
+        // La cella cliccata dall'utente si colora di blu
+        square.addEventListener('click', function() {
+            this.classList.add('dark-blue');
+            console.log(i);
+        });
         grid.append(square);
     }
     grid.classList.add('grid-border');
@@ -30,10 +37,5 @@ function squareGenerator(num) {
     let newSquare = document.createElement('div');
     newSquare.classList.add('square');
     newSquare.innerHTML = `<span>${num}</span>`;
-    // La cella cliccata dall'utente si colora di blu
-    newSquare.addEventListener('click', function() {
-        this.classList.add('dark-blue');
-        console.log(num);
-    });
     return newSquare;
 }
